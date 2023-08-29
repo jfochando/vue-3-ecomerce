@@ -1,9 +1,14 @@
-<script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+<script lang="ts">
+  import ProductList from '@/components/ProductList.vue'
+
+  export default {
+    components: {
+      ProductList
+    }
+      
+  }
 </script>
 
-<template>
-  <main>
-    <TheWelcome />
-  </main>
-</template>
+<template>  
+    <ProductList />
+  </template>
