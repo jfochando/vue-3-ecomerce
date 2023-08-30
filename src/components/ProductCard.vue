@@ -1,6 +1,7 @@
 <script lang="ts">
 import type { PropType } from 'vue';
 import type { Product } from '@/model/Types';
+import { useCartStore } from '@/stores/cart';
 
 export default {
     props: {
@@ -9,10 +10,11 @@ export default {
             required: true    
         }
     },
-    emits: ['addProduct'],
+    
     methods: {
         onAddButtonClick(){            
-            this.$emit('addProduct')
+            const cartStore = useCartStore()
+            cartStore.addProduct( this.product.id )
         }
     },
 }
@@ -37,7 +39,7 @@ export default {
                 @click="onAddButtonClick"
                 variant="tonal"
                 rounded
-                color="white"
+                color="orange-lighten-2"
                 size="small"
 
             >Agregar al carrito</v-btn>
