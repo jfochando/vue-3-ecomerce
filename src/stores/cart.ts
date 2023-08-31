@@ -22,6 +22,31 @@ export const useCartStore = defineStore('cart', {
                     quantity: 1
                 })
             }
-        }
+        },
+        
+        deleteProduct(productId: number){
+            const index = this.details.findIndex( d => d.productId === productId)
+            this.details.splice(index,1)
+        },
+        
+        increment(productId: number){
+            const detailFound = this.details.find( d => d.productId === productId)
+            if (detailFound) {                
+                detailFound.quantity++                
+            }
+        },
+        
+        decrement(productId: number){
+            const detailFound = this.details.find( d => d.productId === productId)
+            
+            if (detailFound) {
+                if( detailFound.quantity == 1){
+                    this.deleteProduct(productId)
+                } else {
+                    detailFound.quantity--
+                }
+            }
+        },
+        
     }
 })
