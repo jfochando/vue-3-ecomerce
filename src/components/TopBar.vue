@@ -15,22 +15,24 @@
     <v-app-bar flat>
         <v-container class="mx-auto d-flex align-center justify-center">
             <v-avatar
-            class="me-4 "
-            color="grey-darken-1"
-            size="32"
-            ></v-avatar>
+                class="me-4"               
+                size="32"
+            >
+            <v-img src="/lion-fire-logo.jpg"></v-img>
+        </v-avatar>
 
             <RouterLink to="/" custom v-slot="{navigate}">
-                <v-btn prepend-icon="mdi-home" :active="$route.name === 'home'" variant="text" @click="navigate">Home</v-btn>
+                <v-btn class="mr-6" prepend-icon="mdi-home" :active="$route.name === 'home'" variant="text" @click="navigate">Home</v-btn>
             </RouterLink>
-            <RouterLink to="/cart">
-            <v-badge :content="itemsCount" :model-value="itemsCount > 0" color="orange-lighten-2">
-                <v-btn prepend-icon="mdi-cart" :active="$route.name === 'cart'" variant="text">Cart</v-btn>
-            </v-badge>
             
+            <RouterLink to="/cart">
+                <v-badge :content="itemsCount" :model-value="itemsCount > 0" color="orange-lighten-2">
+                    <v-btn prepend-icon="mdi-cart" :active="$route.name === 'cart'" variant="text">Cart</v-btn>
+                </v-badge>            
             </RouterLink>
+            
             <RouterLink to="/about">
-                <v-btn prepend-icon="mdi-information" :active="$route.name === 'about'" variant="text">About</v-btn>
+                <v-btn class="ml-6" prepend-icon="mdi-information" :active="$route.name === 'about'" variant="text">About</v-btn>
             </RouterLink>
         
             <v-spacer></v-spacer>
