@@ -20,7 +20,7 @@ export default {
     computed: {
         productImageUrl(){
             return this.product.image
-            ?? 'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg'
+            ?? '/products/default.jpg'
         }
     }
 }
