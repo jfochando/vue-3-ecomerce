@@ -5,6 +5,7 @@ export const useCartStore = defineStore('cart', {
     state: () => ({
         details: <Array<CartDetail>>[]
     }),
+
     getters: {
         cartItemsCount: ( state ) => {
             return state.details.length
@@ -18,6 +19,7 @@ export const useCartStore = defineStore('cart', {
             return total
         }
     },
+    
     actions: {
         addProduct(product: Product){
             const detailFound = this.details.find( d => d.product.id === product.id)
