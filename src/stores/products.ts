@@ -1,9 +1,9 @@
 import { defineStore } from "pinia"
-import type { Product } from '@/model/Types'
+import { type Product } from '@/model/Types'
 
 export const useProductsStore = defineStore('products', {
     state: () => ({
-        order: '' as string,
+        order: 'price' as string,
         categoryId: null as number|null,
         _products: [
             {id: 1, name: 'Silla', price: 56, image:'/products/silla.jpg', categoryId: 1},
@@ -36,11 +36,17 @@ export const useProductsStore = defineStore('products', {
                 return products.sort( (a, b) => a.price - b.price )
             }
 
+            if (state.order === 'priceDesc') {
+                return products.sort( (a, b) => b.price - a.price )
+            }
+
             if (state.order === 'name') {
                 return products.sort( (a,b) => a.name.localeCompare(b.name) )
             }
 
-            
+            if (state.order === 'nameDesc') {
+                return products.sort( (a,b) => b.name.localeCompare(a.name) )
+            }
         }
     },
 
@@ -53,8 +59,16 @@ export const useProductsStore = defineStore('products', {
             this.order = 'price'
         },
 
+        orderByPriceDesc(){
+            this.order = 'priceDesc'
+        },
+
         orderByName(){
             this.order = 'name'
+        },
+
+        orderByNameDesc(){
+            this.order = 'nameDesc'
         }
     }
 })
