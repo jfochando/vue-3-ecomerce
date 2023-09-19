@@ -5,7 +5,11 @@ import { mapState } from 'pinia';
 
 export default {
 
-   methods: {
+    computed: {
+        ...mapState( useCategoriesStore, ['categories'])
+    },
+
+    methods: {
         clearCategory(){
             this.$router.push({
                 name: 'home'
@@ -20,9 +24,6 @@ export default {
         }
     },
     
-    computed: {
-        ...mapState( useCategoriesStore, ['categories'])
-    }
 }
 </script>
 

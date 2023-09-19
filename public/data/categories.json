@@ -1,0 +1,12 @@
+[
+    { 
+        "id": 1,
+        "name": "Oficina",
+        "description": "Productos para la oficina"
+    },
+    {
+        "id": 2,
+        "name": "Ordenadores",
+        "description": "Accesorios para pc"
+    }
+]

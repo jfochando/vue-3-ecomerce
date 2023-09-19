@@ -1,7 +1,7 @@
 
 <script lang="ts">
 
-import OrderOptions from '@/components/left/Orderoptions.vue'
+import OrderOptions from '@/components/left/OrderOptions.vue'
 import CategoryOptions from '@/components/left/CategoryOptions.vue'
 
 
