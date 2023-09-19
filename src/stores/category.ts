@@ -1,12 +1,11 @@
 import { defineStore } from "pinia"
 import { type Category } from "@/model/Types"
+import categoriesData from '../data/categories.json'
+
 
 export const useCategoriesStore = defineStore( 'categories', {
     state: () => ({
-        categories: [
-            { id: 1, name: 'Oficina', description: 'Productos para la oficina'},
-            { id: 2, name: 'Ordenadores', description: 'Accesorios para pc' }
-        ] as Category[]
+        categories: categoriesData as Category[]
     }),
 
     getters: {
