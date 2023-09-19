@@ -8,14 +8,19 @@ export default {
         ProductCard,
     },
     computed: {
-        ...mapState( useProductsStore, ['products'] )
+        ...mapState( useProductsStore, ['products', 'loading'] )
     },  
 }
 
 </script>
 
-<template>    
-    <v-row>
+<template>
+
+    <div v-if="loading" class="d-flex justify-center align-center h-100">
+        <v-progress-circular size="50" indeterminate />
+    </div>
+
+    <v-row v-else>
         <v-col v-for="p in products" :key="p.id" cols="4">
             <ProductCard :product="p" />
         </v-col>

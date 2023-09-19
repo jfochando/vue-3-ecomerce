@@ -1,6 +1,7 @@
 <script lang="ts">
   
   import { useProductsStore } from '../stores/products'
+  import { useCategoriesStore } from '../stores/category';
 
   import ProductList from '@/components/ProductList.vue'
   import LeftMenu from '@/components/left/LeftMenu.vue'
@@ -18,13 +19,26 @@
     },
     
     beforeRouteEnter( to ) {
-      updateCategoryFromRouteParams( to.params.categoryId)
-        
+      updateCategoryFromRouteParams( to.params.categoryId)        
     },
+
     beforeRouteUpdate( to ) {
-      updateCategoryFromRouteParams( to.params.categoryId)
-        
+      updateCategoryFromRouteParams( to.params.categoryId)        
     },
+
+    mounted() {
+
+      setTimeout( () => {
+        const productsStore = useProductsStore()
+        productsStore.fetchProducts()
+      }, 4000);
+
+      setTimeout( () => {
+        const categoriesStore = useCategoriesStore()
+        categoriesStore.fetchCategories()
+      }, 2000);       
+      
+    }
   }
 </script>
 
