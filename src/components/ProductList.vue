@@ -1,4 +1,5 @@
 <script lang="ts">
+
 import ProductCard from '@/components/ProductCard.vue';
 import { mapState } from 'pinia';
 import { useProductsStore } from '../stores/products';
@@ -15,7 +16,6 @@ export default {
 </script>
 
 <template>
-
     <div v-if="loading" class="d-flex justify-center align-center h-100">
         <v-progress-circular size="50" indeterminate />
     </div>

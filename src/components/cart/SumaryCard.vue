@@ -4,7 +4,7 @@ import { mapState } from 'pinia';
 
 export default {
     computed: {
-        ...mapState(useCartStore,['totalAmount'])
+        ...mapState(useCartStore,['totalAmount', 'whatsAppLink'])
     }
 }
 
@@ -21,6 +21,7 @@ export default {
                 rounded
                 color="orange-lighten-2"
                 size="small"
+                :href="whatsAppLink"
             >
                 Realizar pedido
             </v-btn>
