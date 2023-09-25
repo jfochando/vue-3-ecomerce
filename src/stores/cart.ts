@@ -20,10 +20,10 @@ export const useCartStore = defineStore('cart', {
             })
             return total
         },
-        
-        whatsAppMessage(state) {
-            let message = 'Hola, quiero realizar este pedido\n\n'
 
+        whatsAppMessage(state) {            
+            
+            let message = 'Hola, quiero realizar este pedido\n\n'
             state.details.forEach( d => {
                 message += `Producto: ${d.product.name}\n`
                 message += `Cantidad: ${d.quantity}\n`
